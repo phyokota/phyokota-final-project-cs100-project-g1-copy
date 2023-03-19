@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.2)
+project(final-project)
+add_subdirectory(googletest)
+
+include_directories(
+  ./googletest/googletest/include/
+  ./googletest/googlemock/include/
+)
+
+add_executable(inventoryTests
+  ./src/Inventory.cpp
+  ./src/InventoryActions.cpp
+  main.cpp
+)
+
+add_executable(runInventory
+  ./src/Inventory.cpp
+  ./src/InventoryActions.cpp
+  main.cpp
+)
+
+target_link_libraries(inventoryTests gtest gtest_main)
